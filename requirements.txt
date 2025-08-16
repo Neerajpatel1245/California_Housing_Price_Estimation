@@ -1,0 +1,7 @@
+flask
+flask-cors
+black
+mkdocs
+notebook
+pytest
+tox
