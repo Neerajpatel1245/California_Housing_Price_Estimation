@@ -5,3 +5,4 @@ mkdocs
 notebook
 pytest
 tox
+gunicorn
