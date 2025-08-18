@@ -6,3 +6,6 @@ notebook
 pytest
 tox
 gunicorn
+scikit-learn
+pandas
+numpy
