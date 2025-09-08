@@ -9,4 +9,5 @@ gunicorn
 scikit-learn
 pandas
 numpy
+PyYAML
 -e .
