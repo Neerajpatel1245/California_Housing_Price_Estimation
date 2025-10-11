@@ -1,0 +1,369 @@
+{
+      "metrics": [
+            {
+                  "id": "389d65fb2d00b0140fed36faa82e6dc3",
+                  "metric_id": "DriftedColumnsCount(drift_share=0.5,method=psi)",
+                  "value": {
+                        "count": 0.0,
+                        "share": 0.0
+                  }
+            },
+            {
+                  "id": "ae7c293b2f0414bd19724afb21a1148a",
+                  "metric_id": "ValueDrift(column=longitude,method=psi)",
+                  "value": 0.0030392145750423975
+            },
+            {
+                  "id": "39e80ecd0b46e4dadcc6f2b3d6ab4fc4",
+                  "metric_id": "ValueDrift(column=latitude,method=psi)",
+                  "value": 0.007603506091953487
+            },
+            {
+                  "id": "7267ca918a30f83193bec21d71d65e93",
+                  "metric_id": "ValueDrift(column=housing_median_age,method=psi)",
+                  "value": 0.0029177339139989096
+            },
+            {
+                  "id": "3c9cec224c655e7a981a81b0b1445b64",
+                  "metric_id": "ValueDrift(column=total_rooms,method=psi)",
+                  "value": 0.007272717170042542
+            },
+            {
+                  "id": "15e3de2473fdfc1ea36a2f20d027a945",
+                  "metric_id": "ValueDrift(column=total_bedrooms,method=psi)",
+                  "value": 0.00508270999963345
+            },
+            {
+                  "id": "47b03c43e75546fc0ae1baa77c75e906",
+                  "metric_id": "ValueDrift(column=population,method=psi)",
+                  "value": 0.014700361393972326
+            },
+            {
+                  "id": "763b3490b028c12228cb33cb2e5ad09d",
+                  "metric_id": "ValueDrift(column=households,method=psi)",
+                  "value": 0.0080542886774718
+            },
+            {
+                  "id": "c35c83231d6d414b28bdeec21b7e2847",
+                  "metric_id": "ValueDrift(column=median_income,method=psi)",
+                  "value": 0.0025865377267212213
+            },
+            {
+                  "id": "5db85225557de84648c0af5a6406ef5f",
+                  "metric_id": "ValueDrift(column=median_house_value,method=psi)",
+                  "value": 0.006347005167107779
+            },
+            {
+                  "id": "8da4a3b5cf75b08bbc7732dc74badbc8",
+                  "metric_id": "ValueDrift(column=ocean_proximity,method=psi)",
+                  "value": 0.0016162812512363202
+            }
+      ],
+      "tests": [
+            {
+                  "id": "lt",
+                  "name": "Share of Drifted Columns: Less 0.500",
+                  "description": "Share of Drifted Columns: Actual value 0.000 < 0.500",
+                  "metric_config": {
+                        "metric_id": "389d65fb2d00b0140fed36faa82e6dc3",
+                        "params": {
+                              "type": "evidently:metric_v2:DriftedColumnsCount",
+                              "tests": null,
+                              "share_tests": null,
+                              "columns": null,
+                              "embeddings": null,
+                              "embeddings_drift_method": null,
+                              "drift_share": 0.5,
+                              "method": "psi",
+                              "cat_method": null,
+                              "num_method": null,
+                              "text_method": null,
+                              "per_column_method": null,
+                              "threshold": null,
+                              "cat_threshold": null,
+                              "num_threshold": null,
+                              "text_threshold": null,
+                              "per_column_threshold": null
+                        }
+                  },
+                  "test_config": {
+                        "type": "evidently:test_v2:LessThanMetricTest",
+                        "is_critical": true,
+                        "alias": null,
+                        "threshold": 0.5
+                  },
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:CountBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:LessThanMetricTest",
+                              "is_critical": true,
+                              "alias": null,
+                              "threshold": 0.5
+                        },
+                        "metric_fingerprint": "389d65fb2d00b0140fed36faa82e6dc3",
+                        "is_count": false
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column longitude",
+                  "description": "Drift score is 0.00. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "ae7c293b2f0414bd19724afb21a1148a",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "longitude",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "ae7c293b2f0414bd19724afb21a1148a"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column latitude",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "39e80ecd0b46e4dadcc6f2b3d6ab4fc4",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "latitude",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "39e80ecd0b46e4dadcc6f2b3d6ab4fc4"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column housing_median_age",
+                  "description": "Drift score is 0.00. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "7267ca918a30f83193bec21d71d65e93",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "housing_median_age",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "7267ca918a30f83193bec21d71d65e93"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column total_rooms",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "3c9cec224c655e7a981a81b0b1445b64",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "total_rooms",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "3c9cec224c655e7a981a81b0b1445b64"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column total_bedrooms",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "15e3de2473fdfc1ea36a2f20d027a945",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "total_bedrooms",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "15e3de2473fdfc1ea36a2f20d027a945"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column population",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "47b03c43e75546fc0ae1baa77c75e906",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "population",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "47b03c43e75546fc0ae1baa77c75e906"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column households",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "763b3490b028c12228cb33cb2e5ad09d",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "households",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "763b3490b028c12228cb33cb2e5ad09d"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column median_income",
+                  "description": "Drift score is 0.00. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "c35c83231d6d414b28bdeec21b7e2847",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "median_income",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "c35c83231d6d414b28bdeec21b7e2847"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column median_house_value",
+                  "description": "Drift score is 0.01. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "5db85225557de84648c0af5a6406ef5f",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "median_house_value",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "5db85225557de84648c0af5a6406ef5f"
+                  }
+            },
+            {
+                  "id": "drift",
+                  "name": "Value Drift for column ocean_proximity",
+                  "description": "Drift score is 0.00. The drift detection method is PSI. The drift threshold is 0.10.",
+                  "metric_config": {
+                        "metric_id": "8da4a3b5cf75b08bbc7732dc74badbc8",
+                        "params": {
+                              "type": "evidently:metric_v2:ValueDrift",
+                              "tests": null,
+                              "column": "ocean_proximity",
+                              "method": "psi",
+                              "threshold": null
+                        }
+                  },
+                  "test_config": {},
+                  "status": "SUCCESS",
+                  "bound_test": {
+                        "type": "evidently:bound_test:ValueDriftBoundTest",
+                        "test": {
+                              "type": "evidently:test_v2:ValueDriftTest",
+                              "is_critical": true,
+                              "alias": null
+                        },
+                        "metric_fingerprint": "8da4a3b5cf75b08bbc7732dc74badbc8"
+                  }
+            }
+      ]
+}

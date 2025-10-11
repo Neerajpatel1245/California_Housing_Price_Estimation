@@ -13,8 +13,12 @@ data_ingestion_config:
 data_validation_config:
   schema_dir: config
   schema_file_name: schema.yaml
-  report_file_name: report.json
-  report_page_file_name: report.html
+  base_dataset_dir: config
+  base_dataset_file_name: base_dataset.csv
+  train_report_file_name: train_report.json
+  train_report_page_file_name: train_report.html
+  test_report_file_name: test_report.json
+  test_report_page_file_name: test_report.html
 
 data_transformation_config:
   add_bedroom_per_room: true

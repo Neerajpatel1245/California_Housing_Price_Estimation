@@ -8,16 +8,19 @@ DataIngetionConfig = namedtuple(
         "tgz_download_dir",
         "raw_data_dir",
         "ingested_train_dir",
-        "ingested_test_dir",
+        "ingested_test_dir"
     ]
 )
 
 DataValidationConfig = namedtuple(
     "DataValidationConfig",
     [
+        "base_dataset_file_path",
         "schema_file_path",
-        "report_file_path",
-        "report_page_file_path"
+        "train_report_file_path",
+        "train_report_page_file_path",
+        "test_report_file_path",
+        "test_report_page_file_path"
     ]
 )
 
@@ -27,7 +30,7 @@ DataTransformationConfig = namedtuple(
         "add_bedroom_per_room",
         "transformed_train_dir",
         "transformed_test_dir",
-        "preprocessed_object_file_path",
+        "preprocessed_object_file_path"
     ]
 )
 

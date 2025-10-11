@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "House-Predictor"
+version = "0.0.1"
+description = "Machine learning project to predict house prices"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Neeraj Patel", email = "np899355@gmail.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["machine-learning", "ml", "housing", "regression"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "flask",
+  "flask-cors",
+  "scikit-learn",
+  "pandas",
+  "numpy",
+  "PyYAML",
+  "six",
+  "evidently",
+  "gunicorn",
+  "dill",
+  "matplotlib"
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "pytest",
+  "tox",
+  "mkdocs",
+  "mkdocs-material",
+  "notebook",
+  "plotly",
+  "Babel~=2.10",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["housing*"]
+exclude = ["build*", "notebook*", "tests*"]

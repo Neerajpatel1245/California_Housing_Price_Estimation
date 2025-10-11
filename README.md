@@ -1,94 +1,54 @@
-## Start Machine Learning project.
+# California Housing ML Project
 
-### Software and account Requirement.
+This is a small end‑to‑end ML project for the California Housing dataset. It has a simple training pipeline (ingestion → validation → transformation → training → evaluation → pusher) and a Flask app to trigger training, browse artifacts/logs, and make predictions.
 
-1. [Github Account](https://github.com)
-2. [Heroku Account](https://dashboard.heroku.com/login)
-3. [VS Code IDE](https://code.visualstudio.com/download)
-4. [GIT cli](https://git-scm.com/downloads)
-5. [GIT Documentation](https://git-scm.com/docs/gittutorial)
+## Project structure
+- app.py: Flask web app
+- config/: model.yaml (models + grid search), schema.yaml (data schema)
+- housing/: code for components, configs, entities, pipeline, utils, logs, exceptions
+- templates/: Flask HTML templates
+- saved_models/: exported models (created at runtime)
+- housing_logs/: log files (created at runtime)
 
-
-Creating conda environment
-```
-conda create -p venv python==3.7 -y
-```
-```
-conda activate venv/
-```
-OR 
-```
-conda activate venv
-```
-
-```
+## Setup (Windows, Conda)
+```powershell
+conda create -n basic_ml python=3.11 -y
+conda activate basic_ml
+python -m pip install --upgrade pip setuptools wheel
+pip install -e .
 pip install -r requirements.txt
 ```
+In VS Code: use “Python: Select Interpreter” and pick the basic_ml env.
 
-To Add files to git
+## Run the web app
+```powershell
+python app.py
 ```
-git add .
-```
+Open http://localhost:5000/ in your browser.
+Useful routes: /train, /predict, /logs, /artifact, /saved_models
 
-OR
-```
-git add <file_name>
-```
+## Configuration
+- config/model.yaml controls GridSearchCV and candidate models.
+- config/schema.yaml defines columns, dtypes, and the target column.
 
-> Note: To ignore file or folder from git we can write name of file/folder in .gitignore file
+## Artifacts
+- data_ingestion: raw/extracted and train/test data
+- data_validation: schema checks and drift reports (JSON/HTML)
+- data_transformation: processed data and transformers
+- model_trainer, model_evaluation, model_pusher: models and metrics
+- saved_models/: best/serving model copies
 
-To check the git status 
-```
-git status
-```
-To check all version maintained by git
-```
-git log
-```
+## Troubleshooting (quick)
+- ModuleNotFoundError: run `pip install -e .` from the project root.
+- KeyError 'grid_search': check config/model.yaml has a top‑level grid_search.
+- Few logs: check the newest file in housing_logs/ and ensure the pipeline steps are called.
 
-To create version/commit all changes by git
-```
-git commit -m "message"
-```
-
-To send version/changes to github
-```
-git push origin main
-```
-
-To check remote url 
-```
-git remote -v
-```
-
-To setup CI/CD pipeline in heroku we need 3 information
-1. HEROKU_EMAIL = 
-2. HEROKU_API_KEY = <>
-3. HEROKU_APP_NAME = ml-regression-app
-
-BUILD DOCKER IMAGE
-```
-docker build -t <image_name>:<tagname> .
-```
-> Note: Image name for docker must be lowercase
-
-
-To list docker image
-```
-docker images
-```
-
-Run docker image
-```
-docker run -p 5000:5000 -e PORT=5000 <image_id>
-```
-
-To check running container in docker
-```
-docker ps
-```
-
-Tos stop docker conatiner
-```
-docker stop <container_id>
-```
+## Output Screenshots
+### Home page
+![Home page](docs/images/home.png)
+### Logs view
+![Logs view](docs/images/logs.png)
+### Artifacts
+![Artifacts browser](docs/images/artifacts.png)
+### Predict
+![Predict form](docs/images/predict.png)
