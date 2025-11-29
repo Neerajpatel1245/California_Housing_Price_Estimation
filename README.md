@@ -1,4 +1,5 @@
 # California Housing ML Project
+https://house-price-prediction.tech
 
 This is a small end‑to‑end ML project for the California Housing dataset. It has a simple training pipeline (ingestion → validation → transformation → training → evaluation → pusher) and a Flask app to trigger training, browse artifacts/logs, and make predictions.
 
